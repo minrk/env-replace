@@ -9,6 +9,7 @@ Usage:
 """
 
 from collections import OrderedDict
+from operator import itemgetter
 import os
 import sys
 
@@ -38,6 +39,8 @@ def main():
             replacements[value] = envvar
             assignments[envvar] = key + '='
 
+    consumed = {}
+
     for line in sys.stdin:
         # perform replacements per line
         save_line = line
@@ -46,8 +49,16 @@ def main():
                 # avoid rewriting assignments, e.g.
                 # the output of `env` itself
                 continue
+            before = line
             line = line.replace(to_replace, envvar)
+            if envvar not in consumed and line != before:
+                consumed[envvar] = to_replace
         sys.stdout.write(line)
+
+    if consumed:
+        print("\n[env-replace] environment variables found in output:")
+        for envvar, value in sorted(consumed.items(), key=itemgetter(0)):
+            print("export {}={}".format(envvar[1:], value))
 
 
 if __name__ == '__main__':
