@@ -1,0 +1,19 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "envreplace"
+author = "Min RK"
+author-email = "benjaminrk@gmail.com"
+home-page = "https://github.com/minrk/env_replace"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+requires-python=">=3"
+description-file="README.md"
+
+[tool.flit.scripts]
+envreplace = "envreplace:main"

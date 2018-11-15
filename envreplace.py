@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-env-replace: un-expand environment variables for more compact output
+envreplace: un-expand environment variables for more compact output
 
 Usage:
 
@@ -11,6 +11,8 @@ Usage:
 from collections import OrderedDict
 import os
 import sys
+
+__version__ = '0.1.0'
 
 
 def _sort_by_length(key_value):
