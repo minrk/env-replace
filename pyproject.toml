@@ -3,7 +3,7 @@ requires = ["flit"]
 build-backend = "flit.buildapi"
 
 [tool.flit.metadata]
-module = "envreplace"
+module = "env_replace"
 author = "Min RK"
 author-email = "benjaminrk@gmail.com"
 home-page = "https://github.com/minrk/env_replace"
@@ -16,4 +16,4 @@ requires-python=">=3"
 description-file="README.md"
 
 [tool.flit.scripts]
-envreplace = "envreplace:main"
+env-replace = "env_replace:main"

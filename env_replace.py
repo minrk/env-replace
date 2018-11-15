@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-envreplace: un-expand environment variables for more compact output
+env-replace: un-expand environment variables for more compact output
 
 Usage:
 
